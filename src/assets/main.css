@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(58, 32, 82);
+  color:blanchedalmond;
+  font-family: 'Courier New', Courier, monospace;
+}
+.header {
+  margin-left: 200px;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(84, 124, 159);
+  font-size: 3em;
+}
+
+.element {
+  margin-left: 200px;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(84, 124, 159);
+  font-size: 2em;
+}
+
+.list {
+  margin-left: 200px;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(206, 206, 206);
+  font-size: 1.5em;
+}
+
+.btn {
+  margin-left: 200px;
+}
