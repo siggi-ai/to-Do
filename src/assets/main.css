@@ -10,6 +10,10 @@ body {
   font-size: 3em;
 }
 
+input::placeholder {
+  font: 1.25rem/3 courier;
+}
+
 .element {
   margin-left: 200px;
   font-family: 'Courier New', Courier, monospace;

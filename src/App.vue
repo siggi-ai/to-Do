@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
+const header = ref('doIt!')
 const doIt = ref('')
 const toDoArray = ref([
     {id: 1, item: 'Tu dies'}, 
@@ -19,10 +20,11 @@ const removeTodo = (toDo) => {
 </script>
 
 <template>
-<h1 class="header">do IT!</h1>
-
+<h1 class="header">{{ header }}</h1>
+<p v-if="doIt" class="element">🙂</p>
+<p v-else class="element">🤔</p>
 <form @submit.prevent="addTodo">
-    <input @submit.prevent="addTodo" v-model="doIt" class="element" placeholder="Was willste machen?" type="text">
+    <input @submit.prevent="addTodo" v-model="doIt" class="element" placeholder=" 🤔 Was willste machen?" type="text">
     <br/>
     <br/>
     <button class="btn" value="doIt">click!</button>  ... oder drück' enter
