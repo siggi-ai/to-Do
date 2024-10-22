@@ -12,6 +12,10 @@ const addTodo = () => {
     toDoArray.value.push({ id: toDoArray.value.length+1, item: doIt.value})
     doIt.value = ''
 }
+
+const removeTodo = (toDo) => {
+    toDoArray.value = toDoArray.value.filter((t) => t !== toDo)
+}
 </script>
 
 <template>
@@ -29,6 +33,7 @@ const addTodo = () => {
     <li v-for="toDo in toDoArray" class="list">
         {{ toDo.id }}
         {{ toDo.item }}
+        <button @click="removeTodo(toDo)" value="toDo">X</button>
     </li>
 </ul>
 </template>
