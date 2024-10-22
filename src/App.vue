@@ -19,19 +19,19 @@ const removeTodo = (toDo) => {
 </script>
 
 <template>
-<h1 class="header">Todo!</h1>
+<h1 class="header">do IT!</h1>
 
 <form @submit.prevent="addTodo">
     <input @submit.prevent="addTodo" v-model="doIt" class="element" placeholder="Was willste machen?" type="text">
     <br/>
     <br/>
-    <button class="btn" value="doIt">Halt's fest</button>
+    <button class="btn" value="doIt">click!</button>  ... oder drück' enter
     </form>
-    <p class="element">{{ doIt }}</p>
+    <p class="elementSmall" placeholder="input">>>{{ doIt }}<<</p>
+    <p class="elementSmall">{{ doIt.length }}/100</p>
 
 <ul >
-    <li v-for="toDo in toDoArray" class="list">
-        {{ toDo.id }}
+    <li v-for="(toDo, index) in toDoArray" class="list">
         {{ toDo.item }}
         <button @click="removeTodo(toDo)" value="toDo">X</button>
     </li>

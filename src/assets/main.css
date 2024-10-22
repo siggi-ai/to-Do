@@ -17,6 +17,13 @@ body {
   font-size: 2em;
 }
 
+.elementSmall {
+  margin-left: 200px;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(84, 124, 159);
+  font-size: 1em;
+}
+
 .list {
   margin-left: 200px;
   font-family: 'Courier New', Courier, monospace;
@@ -26,4 +33,14 @@ body {
 
 .btn {
   margin-left: 200px;
+  background-color:aquamarine;
+  padding: 5px;
+  border-radius: 3%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    border-bottom-right-radius: 3%;
+    border-bottom-left-radius: 3%;
+  color: #007745;
+  font-size: 1em;
+  font-family: courier;
 }
