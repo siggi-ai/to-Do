@@ -1,14 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const header = ref('doIt!')
 const doIt = ref('')
 const toDoArray = ref([
     {id: 1, item: 'Tu dies', did: false}, 
     {id: 2, item: 'Tu das', did: false},
-    {id: 3, item: 'Tu jenes', did: true},
+    {id: 3, item: 'Tu jenes', did: false},
 ])
-    
+
+const reversedToDoArray = computed(()=> [...toDoArray.value].reverse())
+
 const addTodo = () => {
     toDoArray.value.push({ id: toDoArray.value.length+1, item: doIt.value})
     doIt.value = ''
@@ -38,7 +40,7 @@ const didThis = (toDo) => {
     <p class="elementSmall">{{ doIt.length }}/100</p>
 
 <ul >
-    <li v-for="(toDo, did, index) in toDoArray" class="list" :class="{done: toDo.did}">
+    <li v-for="(toDo, did, index) in reversedToDoArray" class="list" :class="{done: toDo.did}">
         <input type="checkbox" @click="didThis(toDo)" value="toDo">
         {{ toDo.item }}
         <button @click="removeTodo(toDo)" value="toDo">X</button>
