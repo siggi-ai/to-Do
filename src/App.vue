@@ -4,9 +4,9 @@ import { ref } from 'vue'
 const header = ref('doIt!')
 const doIt = ref('')
 const toDoArray = ref([
-    {id: 1, item: 'Tu dies'}, 
-    {id: 2, item: 'Tu das'},
-    {id: 3, item: 'Tu jenes'},
+    {id: 1, item: 'Tu dies', did: false}, 
+    {id: 2, item: 'Tu das', did: false},
+    {id: 3, item: 'Tu jenes', did: true},
 ])
     
 const addTodo = () => {
@@ -16,6 +16,11 @@ const addTodo = () => {
 
 const removeTodo = (toDo) => {
     toDoArray.value = toDoArray.value.filter((t) => t !== toDo)
+}
+
+const didThis = (toDo) => {
+    console.log(toDo.did)
+    toDo.did = !toDo.did
 }
 </script>
 
@@ -33,7 +38,8 @@ const removeTodo = (toDo) => {
     <p class="elementSmall">{{ doIt.length }}/100</p>
 
 <ul >
-    <li v-for="(toDo, index) in toDoArray" class="list">
+    <li v-for="(toDo, did, index) in toDoArray" class="list" :class="{done: toDo.did}">
+        <input type="checkbox" @click="didThis(toDo)" value="toDo">
         {{ toDo.item }}
         <button @click="removeTodo(toDo)" value="toDo">X</button>
     </li>
